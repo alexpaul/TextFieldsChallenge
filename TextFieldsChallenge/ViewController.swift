@@ -16,11 +16,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lockableTextField: UITextField!
     @IBOutlet weak var lockableSwitch: UISwitch!
     
+    // Text Field Delegates
+    let zipCodeTextFieldDelegate = ZipCodeTextFieldDelegate()
+    let cashTextFieldDelegate = CashTextFieldDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        zipCodeTextField.delegate = self
-        cashTextField.delegate = self
+        zipCodeTextField.delegate = zipCodeTextFieldDelegate
+        cashTextField.delegate = cashTextFieldDelegate
         lockableTextField.delegate = self
     }
     
@@ -29,7 +33,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         lockableTextField.resignFirstResponder()
     }
 
-    // MARK: UITextFieldDelegate Methods
+    // MARK: UITextFieldDelegate Methods for the lockableTextField
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         var dismissKeyboard = true
@@ -46,46 +50,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        var lengthOfZipCode = (zipCodeTextField.text as NSString).length
-        if lengthOfZipCode == 5{
-            zipCodeTextField.resignFirstResponder()
-        }
-        
-        if textField == cashTextField {
-            // Remove $ if it exist in cash text field
-            var modifiedString = (cashTextField.text as NSString).stringByReplacingOccurrencesOfString("$", withString: " ")
-            
-            // Construct the text that will be changed
-            var newText: NSString = modifiedString // convert String to NSString
-            newText = newText.stringByReplacingCharactersInRange(range, withString: string)
-            
-            var newTextDoubleValue: Double = 0.0
-            
-            if cashTextField.text == "" { // first instance divide value by 100
-                newTextDoubleValue = newText.doubleValue / 100
-            }else{ // multiply by 10
-                newTextDoubleValue = newText.doubleValue * 10
-            }
-        
-            newText = "\(newTextDoubleValue)"
-            
-            cashTextField.text = "$\(newText)" // e.g $12.34
-            
-            return false
-        }
-        return true
-    }
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
-    
-    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
-        // With the case where zip code length is 5
-        return true
-    }
-
 
 }
 

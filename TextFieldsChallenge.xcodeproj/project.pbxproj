@@ -13,6 +13,8 @@
 		57A7B22D1B3501A100D62F45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A7B22C1B3501A100D62F45 /* Images.xcassets */; };
 		57A7B2301B3501A100D62F45 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A7B22E1B3501A100D62F45 /* LaunchScreen.xib */; };
 		57A7B23C1B3501A100D62F45 /* TextFieldsChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B23B1B3501A100D62F45 /* TextFieldsChallengeTests.swift */; };
+		57A7B24E1B361D8C00D62F45 /* ZipCodeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B24D1B361D8C00D62F45 /* ZipCodeTextFieldDelegate.swift */; };
+		57A7B2501B361E6600D62F45 /* CashTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A7B24F1B361E6600D62F45 /* CashTextFieldDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		57A7B2351B3501A100D62F45 /* TextFieldsChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextFieldsChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A7B23A1B3501A100D62F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A7B23B1B3501A100D62F45 /* TextFieldsChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldsChallengeTests.swift; sourceTree = "<group>"; };
+		57A7B24D1B361D8C00D62F45 /* ZipCodeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZipCodeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		57A7B24F1B361E6600D62F45 /* CashTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CashTextFieldDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +81,9 @@
 		57A7B2221B3501A100D62F45 /* TextFieldsChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				57A7B2251B3501A100D62F45 /* AppDelegate.swift */,
 				57A7B2271B3501A100D62F45 /* ViewController.swift */,
 				57A7B2291B3501A100D62F45 /* Main.storyboard */,
-				57A7B22C1B3501A100D62F45 /* Images.xcassets */,
-				57A7B22E1B3501A100D62F45 /* LaunchScreen.xib */,
+				57A7B24C1B361D4E00D62F45 /* Text Field Delegates */,
 				57A7B2231B3501A100D62F45 /* Supporting Files */,
 			);
 			path = TextFieldsChallenge;
@@ -90,6 +92,9 @@
 		57A7B2231B3501A100D62F45 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				57A7B22E1B3501A100D62F45 /* LaunchScreen.xib */,
+				57A7B22C1B3501A100D62F45 /* Images.xcassets */,
+				57A7B2251B3501A100D62F45 /* AppDelegate.swift */,
 				57A7B2241B3501A100D62F45 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +115,15 @@
 				57A7B23A1B3501A100D62F45 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57A7B24C1B361D4E00D62F45 /* Text Field Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				57A7B24D1B361D8C00D62F45 /* ZipCodeTextFieldDelegate.swift */,
+				57A7B24F1B361E6600D62F45 /* CashTextFieldDelegate.swift */,
+			);
+			name = "Text Field Delegates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +227,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				57A7B2281B3501A100D62F45 /* ViewController.swift in Sources */,
+				57A7B2501B361E6600D62F45 /* CashTextFieldDelegate.swift in Sources */,
+				57A7B24E1B361D8C00D62F45 /* ZipCodeTextFieldDelegate.swift in Sources */,
 				57A7B2261B3501A100D62F45 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
