@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="TextFieldsChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,58 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Zip Code" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iG1-LZ-VcA">
+                                <rect key="frame" x="16" y="70" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Cash Amount" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWJ-4C-0WJ">
+                                <rect key="frame" x="16" y="108" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Turn Switch on to Enter Text" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-7g-6Fr">
+                                <rect key="frame" x="16" y="146" width="511" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5n7-W4-RtC">
+                                <rect key="frame" x="535" y="146" width="51" height="31"/>
+                                <connections>
+                                    <action selector="lockableSwithToggled:" destination="vXZ-lx-hvc" eventType="valueChanged" id="rer-Gt-7YO"/>
+                                </connections>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="iG1-LZ-VcA" secondAttribute="centerY" constant="215" id="7N1-vx-BPH"/>
+                            <constraint firstItem="fWJ-4C-0WJ" firstAttribute="leading" secondItem="iG1-LZ-VcA" secondAttribute="leading" id="8Ba-hf-l32"/>
+                            <constraint firstAttribute="centerX" secondItem="iG1-LZ-VcA" secondAttribute="centerX" id="BcA-Pm-B6d"/>
+                            <constraint firstItem="N5w-7g-6Fr" firstAttribute="top" secondItem="fWJ-4C-0WJ" secondAttribute="bottom" constant="8" id="CkM-Zg-uvu"/>
+                            <constraint firstItem="5n7-W4-RtC" firstAttribute="top" secondItem="fWJ-4C-0WJ" secondAttribute="bottom" constant="8" id="LIS-7x-KLZ"/>
+                            <constraint firstItem="iG1-LZ-VcA" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="PwV-uh-uRv"/>
+                            <constraint firstItem="fWJ-4C-0WJ" firstAttribute="top" secondItem="iG1-LZ-VcA" secondAttribute="bottom" constant="8" id="Wy4-sx-u4j"/>
+                            <constraint firstItem="fWJ-4C-0WJ" firstAttribute="trailing" secondItem="5n7-W4-RtC" secondAttribute="trailing" id="YF1-jp-TNv"/>
+                            <constraint firstItem="5n7-W4-RtC" firstAttribute="leading" secondItem="N5w-7g-6Fr" secondAttribute="trailing" constant="8" id="ZzD-YK-cpI"/>
+                            <constraint firstItem="iG1-LZ-VcA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="bpQ-m4-xcK"/>
+                            <constraint firstItem="fWJ-4C-0WJ" firstAttribute="trailing" secondItem="iG1-LZ-VcA" secondAttribute="trailing" id="w10-Sd-ZTZ"/>
+                            <constraint firstItem="N5w-7g-6Fr" firstAttribute="leading" secondItem="fWJ-4C-0WJ" secondAttribute="leading" id="xVy-dO-5RG"/>
+                            <constraint firstItem="iG1-LZ-VcA" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="zB4-eU-jCs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7N1-vx-BPH"/>
+                                <exclude reference="BcA-Pm-B6d"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cashTextField" destination="fWJ-4C-0WJ" id="NX0-cI-8V1"/>
+                        <outlet property="lockableSwitch" destination="5n7-W4-RtC" id="0bV-1g-BCC"/>
+                        <outlet property="lockableTextField" destination="N5w-7g-6Fr" id="02Z-Dj-7gF"/>
+                        <outlet property="zipCodeTextField" destination="iG1-LZ-VcA" id="XFv-4N-yLu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
