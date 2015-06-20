@@ -18,13 +18,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         zipCodeTextField.delegate = self
         cashTextField.delegate = self
         lockableTextField.delegate = self
-        
-        // Initial text for the Cash Text Field $0.00
-        cashTextField.text = "$0.00"
     }
     
     @IBAction func lockableSwithToggled(sender: UISwitch) {
@@ -58,7 +55,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if textField == cashTextField {
             // Remove $ if it exist in cash text field
             var modifiedString = (cashTextField.text as NSString).stringByReplacingOccurrencesOfString("$", withString: " ")
-            println(modifiedString)
             
             // Construct the text that will be changed
             var newText: NSString = modifiedString // convert String to NSString
